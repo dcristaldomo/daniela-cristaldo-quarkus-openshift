@@ -1,0 +1,4 @@
+org/acme/getting/started/Contact.class
+org/acme/getting/started/GreetingResource.class
+org/acme/getting/started/GreetingService.class
+org/acme/getting/started/ContactResource.class
