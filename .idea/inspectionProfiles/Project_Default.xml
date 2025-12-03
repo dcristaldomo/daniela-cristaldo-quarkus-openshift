@@ -9,6 +9,7 @@
           <option value="kafka-streams.*" />
           <option value="camel.*" />
           <option value="quarkus.datasource.*" />
+          <option value="quarkus.hibernate-orm.*" />
         </list>
       </option>
     </inspection_tool>
