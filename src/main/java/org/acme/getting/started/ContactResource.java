@@ -42,7 +42,13 @@ public class ContactResource {
     @Path("/email/{email}")
     @Transactional
     public Response updateContactByEmail(@PathParam("email") String email, Contact updatedContact) {
-        Contact contact = entityManager.find(Contact.class, email);
+        Contact contact = entityManager.createQuery(
+                        "SELECT c FROM Contact c WHERE c.email = :email", Contact.class)
+                .setParameter("email", email)
+                .getResultStream()
+                .findFirst()
+                .orElse(null);
+
         if (contact == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
