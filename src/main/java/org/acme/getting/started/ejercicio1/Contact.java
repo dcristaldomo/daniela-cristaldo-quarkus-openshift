@@ -1,4 +1,4 @@
-package org.acme.getting.started;
+package org.acme.getting.started.ejercicio1;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
