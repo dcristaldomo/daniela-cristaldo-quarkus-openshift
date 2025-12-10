@@ -35,7 +35,7 @@ public class MiddlewareResource {
     @Path("/sipap")
     @Produces(MediaType.APPLICATION_JSON)
     public Response sipap(@QueryParam("dominio") String dominio) {
-        Object response = client.getSipap(dominio, "Bearer " + jwt);
+        Object response = client.getSipap(dominio, "Bearer " + jwt.trim());
         if (response != null) {
             return Response.ok(response).build();
         }
