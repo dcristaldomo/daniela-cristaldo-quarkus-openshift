@@ -1,0 +1,207 @@
+{
+  "info": {
+    "_postman_id": "4f97d0f1-56a0-4a01-9eb7-8a904956cc98",
+    "name": "QUARKUS-DANIELA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Middleware Resource",
+      "item": [
+        {
+          "name": "Obtener surcusales",
+          "id": "af1f020c-f2de-4b9f-8ecf-d26d840268b1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/surcusales",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "surcusales"
+              ],
+              "query": [
+                {
+                  "key": "nombreODireccion",
+                  "value": "Microcentro",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sipap",
+          "id": "631666c1-d061-4310-abfa-e66cfb2f5f2a",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/sipap?dominio=motivos-sipap",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "sipap"
+              ],
+              "query": [
+                {
+                  "key": "dominio",
+                  "value": "motivos-sipap"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "f4c8fd50-fb88-4d6d-acef-6c96196d8459"
+    },
+    {
+      "name": "Contact Resource",
+      "item": [
+        {
+          "name": "Create a new contact",
+          "id": "6f5f0561-b34f-47da-86c0-2b077a94df56",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Agie\",\n    \"email\": \"angie@angie.com\",\n    \"dataProtection\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/contact",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "contact"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/contact \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\"name\": \"Agie\", \"email\": \"angie@angie.com\",\"dataProtection\": true}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get all contacts",
+          "id": "663533c4-8b74-4864-9637-49a4677746d3",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contact",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "contact"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET http://localhost:8080/api/contact"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a contact by ID",
+          "id": "b16d386b-652b-42da-b276-ed9ed622d765",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contact/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "contact",
+                "2"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET http://localhost:8080/api/contact/1"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a contact by ID",
+          "id": "00c9c566-7d40-4e43-a26c-c7ce7ab5b5f1",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contact/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "contact",
+                "1"
+              ]
+            },
+            "description": "Generated from cURL: curl -X DELETE http://localhost:8080/api/contact/1"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a contact by ID",
+          "id": "87a879f1-1c5d-4185-bd2d-843b8f0b29ec",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 2,\n    \"name\": \"Agie\",\n    \"email\": \"angie1@example.com\",\n    \"dataProtection\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/contact/email/angie@angie.com",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "contact",
+                "email",
+                "angie@angie.com"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PUT http://localhost:8080/api/contact/1 \\\n-H \"Content-Type: application/json\" \\\n -d '{\"name\": \"Agie\", \"email\": \"angie@example.com\",\"dataProtection\": true}'"
+          },
+          "response": []
+        }
+      ],
+      "id": "dbe4c20c-f1a0-4137-9cdb-c67be0831325"
+    }
+  ]
+}
