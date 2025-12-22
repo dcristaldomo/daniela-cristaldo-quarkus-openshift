@@ -202,6 +202,79 @@
         }
       ],
       "id": "dbe4c20c-f1a0-4137-9cdb-c67be0831325"
+    },
+    {
+      "name": "Favorito Resource",
+      "item": [
+        {
+          "name": "Obtener lista completa de favoritos almacenados",
+          "id": "ec818c88-f40e-4a1c-a3d8-6431d1d22396",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favoritos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "favoritos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crea un nuevo favorito",
+          "id": "e33d455f-625d-4f38-ae9a-1f0701607930",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo\": \"SIPAP\",\n  \"referenciaId\": \"ABC123456\",\n  \"descripcion\": \"Centro de operaciones\",\n  \"fechaRegistro\": \"2023-10-06T12:15:50\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/favoritos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "favoritos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar un favorito",
+          "id": "562a074d-9af2-4b95-99f1-b71ac3d57124",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/favoritos/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "favoritos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "8606caa2-56d7-46d9-b8ed-561292e6148a"
     }
   ]
 }

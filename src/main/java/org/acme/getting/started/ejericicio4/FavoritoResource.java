@@ -7,7 +7,7 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 
-@Path("/api/favorito")
+@Path("/api/favoritos")
 @Produces("application/json")
 @Consumes("application/json")
 public class FavoritoResource {
