@@ -24,6 +24,12 @@ public class FavoritoResource {
     @Transactional
     public Response createFavorito(Favorito favorito) {
         try {
+            if (favorito.getTipo() == null ||
+                    (!favorito.getTipo().equals(TipoFavorito.CENTRO) && !favorito.getTipo().equals(TipoFavorito.SIPAP))) {
+                return Response.status(Response.Status.BAD_REQUEST)
+                        .entity("{\"error\":\"El tipo debe ser 'CENTRO' o 'SIPAP'.\"}")
+                        .build();
+            }
             entityManager.persist(favorito);
             return Response.status(Response.Status.CREATED).entity(favorito).build();
         } catch (PersistenceException e) {

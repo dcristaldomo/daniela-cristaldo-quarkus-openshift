@@ -18,7 +18,8 @@ public class Favorito {
     private Long id;
 
     @Column(nullable = false)
-    private String tipo;
+    @Enumerated(EnumType.STRING)
+    private TipoFavorito tipo;
 
     @Column(nullable = false)
     private String referenciaId;
